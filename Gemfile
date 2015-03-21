@@ -25,7 +25,7 @@ gem 'mongoid'
 
 gem 'devise'
 
-gem 'simple-form'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -40,7 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
-  #gem 'rspec-rails'
+  gem 'rspec-rails'
 
   gem 'guard-rspec', require: false
 
