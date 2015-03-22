@@ -23,6 +23,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'mongoid'
 
+gem 'redis-objects'
+
+gem 'connection_pool'
+
 gem 'devise'
 
 gem 'simple_form'
@@ -43,7 +47,19 @@ group :development, :test do
 
   gem 'rspec-rails'
 
+  gem 'spring-commands-rspec'
+
+  gem 'faker'
+
+  gem 'factory_girl_rails'
+
   gem 'guard-rspec', require: false
+
+  gem 'guard-bundler', require: false
+
+  gem 'guard-rails', require: false
+
+  gem 'guard-livereload', require: false
 
   gem 'pry-rails'
 
