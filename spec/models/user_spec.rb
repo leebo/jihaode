@@ -3,51 +3,35 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   it 'email is prsent' do
-    user = User.new
-    user.password = '12345678'
-    user.save
+    user = FactoryGirl.build(:user, email: '')
     expect(user).to be_invalid
   end
 
   it 'email is not valid' do
-    user = User.new
-    user.email = "test@aaa"
-    user.password = '12345678'
-    user.save
+    user = FactoryGirl.build(:user, email: 'aaa@fdsafds')
     expect(user).to be_invalid
     expect(user.errors[:email]).to include('is invalid')
   end
 
   it 'password is present' do
-    user = User.new
-    user.email = "test@aaa.com"
-    user.save
+    user = FactoryGirl.build(:user, password: '')
     expect(user).to be_invalid
   end
 
   it 'password is too short' do
-    user = User.new
-    user.email = "test@aaa.com"
-    user.password = '12345'
-    user.save
+    user = FactoryGirl.build(:user, password: '12345')
     expect(user).to be_invalid
   end
 
   it 'user is valid' do
-    user = User.new
-    user.email = "me@bobo.im"
-    user.password = '12345678'
-    user.save
+    user = FactoryGirl.build(:user)
     expect(user).to be_valid
   end
 
   describe "redis counter" do
 
     before :each do
-      @user = User.create(
-        email: "bobo@im.com",
-        password: "123321123"
-      )
+      @user = FactoryGirl.create(:user)
     end
     it 'is count' do
       expect(@user.views).to eq(0)
