@@ -12,6 +12,10 @@ require 'rails_helper'
 # end
 RSpec.describe PostsHelper, type: :helper do
   it 'can add 5 and 4' do
-    expect(add(5,4)).to eq 1
+    expect(add(5,4)).to eq 9
+  end
+
+  it 'can add 2 and 3' do
+    expect(add(2,3)).not_to eq 9
   end
 end
