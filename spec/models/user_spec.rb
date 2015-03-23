@@ -43,21 +43,19 @@ RSpec.describe User, type: :model do
 
   describe "redis counter" do
 
-    it 'is count' do
-      user = User.create(
+    before :each do
+      @user = User.create(
         email: "bobo@im.com",
         password: "123321123"
       )
-      expect(user.views).to eq(0)
+    end
+    it 'is count' do
+      expect(@user.views).to eq(0)
     end
 
     it 'is count add 1' do
-      user = User.create(
-        email: "bobo@im.com",
-        password: "123321123"
-      )
-      user.views.increment
-      expect(user.views).to eq(1)
+      @user.views.increment
+      expect(@user.views).to eq(1)
     end
 
   end
