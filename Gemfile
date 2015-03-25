@@ -36,6 +36,10 @@ gem 'puma'
 gem 'slim'
 
 gem 'sidekiq'
+
+gem 'sinatra', require: nil
+
+gem 'sidetiq'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

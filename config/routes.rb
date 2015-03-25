@@ -1,4 +1,9 @@
+require 'sidekiq/web'
+require 'sidetiq/web'
 Rails.application.routes.draw do
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   resources :comments
   resources :posts
   get 'home/index'
