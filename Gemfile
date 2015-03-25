@@ -32,6 +32,10 @@ gem 'devise'
 gem 'simple_form'
 
 gem 'puma'
+
+gem 'slim'
+
+gem 'sidekiq'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
