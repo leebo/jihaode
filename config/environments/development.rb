@@ -7,6 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
+  # sidetiq 后台界面需要将如下设置改为true 要不显示不正常
   config.eager_load = true
 
   # Show full error reports and disable caching.
