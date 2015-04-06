@@ -1,6 +1,5 @@
 source 'https://ruby.taobao.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
@@ -22,6 +21,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'mongoid'
+gem 'thin'
 
 gem 'redis-objects'
 

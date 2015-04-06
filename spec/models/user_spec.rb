@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
 
   it 'email is prsent' do
-    user = build(:user, email: '')
+    user = create(:admin_user, email: '')
+    user = create(:user, email: '')
     expect(user).to be_invalid
   end
 
@@ -29,12 +30,11 @@ RSpec.describe User, type: :model do
   end
 
   describe "redis counter" do
-
     before :each do
       @user = create(:user)
     end
     it 'is count' do
-      expect(@user.views).to eq(0)
+      expect(@user.views.value).to eq(1)
     end
 
     it 'is count add 1' do
