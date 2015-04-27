@@ -35,6 +35,10 @@ module Jihaode
         routing_specs: false
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
     end
+config.action_dispatch.default_headers.merge!({
+  'Access-Control-Allow-Origin' => '*',
+  'Access-Control-Request-Method' => '*'
+})
 
     config.active_job.queue_adapter = :sidekiq
   end
